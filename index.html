@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Raise a Builder — a parent's guide to raising a kid who loves to make things</title>
+<meta name="description" content="A warm, un-preachy guide to raising a kid who makes things instead of just watching. By Peter & Hans Stam.">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Fredoka:wght@400;500;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --marigold:#F2B43E; --marigold-soft:#F8DDA0; --navy:#1B2A3D; --coral:#E2603B;
+    --cream:#FBF5E8; --ink:#3a4654; --paper:#FFFFFF;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:'Nunito',sans-serif; color:var(--ink); background:var(--paper); line-height:1.6; }
+  a{ color:inherit; text-decoration:none; }
+  .wrap{ max-width:1060px; margin:0 auto; padding:0 28px; }
+  h2{ font-family:'Fredoka',sans-serif; font-weight:600; color:var(--navy); font-size:30px; line-height:1.15; }
+  h3{ font-family:'Fredoka',sans-serif; font-weight:500; color:var(--navy); font-size:20px; }
+  p{ font-size:17px; }
+  .lead{ font-size:19px; }
+
+  .btn{ display:inline-block; font-family:'Fredoka',sans-serif; font-weight:500; font-size:16px;
+        padding:13px 26px; border-radius:40px; border:2px solid transparent; cursor:pointer; transition:transform .12s, background .15s; }
+  .btn:hover{ transform:translateY(-2px); }
+  .btn-coral{ background:var(--coral); color:#fff; }
+  .btn-ghost{ background:transparent; color:var(--navy); border-color:var(--navy); }
+  .btn-navy{ background:var(--navy); color:#fff; }
+
+  /* nav */
+  nav{ background:var(--marigold); }
+  nav .wrap{ display:flex; align-items:center; justify-content:space-between; height:64px; }
+  nav .brand{ font-family:'Fredoka',sans-serif; font-weight:600; font-size:19px; color:var(--navy); }
+  nav .brand .r{ font-family:'Caveat',cursive; font-weight:700; font-size:22px; }
+  nav .links{ display:flex; align-items:center; gap:24px; }
+  nav .links a{ font-weight:600; font-size:15px; color:var(--navy); }
+  nav .links .btn{ padding:9px 18px; font-size:14px; }
+  @media(max-width:680px){ nav .links a:not(.btn){ display:none; } }
+
+  /* hero */
+  .hero{ background:var(--marigold); padding:54px 0 64px; }
+  .hero .wrap{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:24px; align-items:center; }
+  .hero .raise{ font-family:'Caveat',cursive; font-weight:700; font-size:46px; color:var(--navy); line-height:1; }
+  .hero .builder{ font-family:'Fredoka',sans-serif; font-weight:600; font-size:76px; color:var(--navy); line-height:.98; }
+  .hero .uline{ height:8px; width:170px; background:var(--coral); border-radius:5px; margin:16px 0 18px; }
+  .hero .sub{ font-size:20px; color:#5a4a1f; max-width:30ch; margin-bottom:26px; }
+  .hero .cta{ display:flex; gap:14px; flex-wrap:wrap; }
+  .hero .art{ display:flex; justify-content:center; }
+  .hero .art svg{ width:260px; }
+  @media(max-width:780px){
+    .hero .wrap{ grid-template-columns:1fr; text-align:center; }
+    .hero .uline{ margin-left:auto; margin-right:auto; }
+    .hero .sub{ margin-left:auto; margin-right:auto; }
+    .hero .cta{ justify-content:center; }
+    .hero .builder{ font-size:60px; }
+    .hero .art{ order:-1; }
+    .hero .art svg{ width:200px; }
+  }
+
+  section{ padding:62px 0; }
+  .cream{ background:var(--cream); }
+  .center{ text-align:center; }
+  .center h2{ margin-bottom:14px; }
+  .center .lead{ max-width:62ch; margin:0 auto; }
+
+  /* two-up idea */
+  .idea .wrap{ display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; }
+  .idea .pill{ display:inline-block; background:var(--marigold-soft); color:#6b5212; font-weight:700;
+               font-size:13px; padding:5px 14px; border-radius:30px; margin-bottom:14px; }
+  @media(max-width:780px){ .idea .wrap{ grid-template-columns:1fr; gap:22px; } }
+
+  /* chapters grid */
+  .chapters{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:34px; }
+  .ch{ background:var(--paper); border:1px solid #ece4d2; border-radius:14px; padding:18px 18px 20px; }
+  .ch .n{ font-family:'Fredoka',sans-serif; font-weight:600; color:var(--coral); font-size:15px; }
+  .ch h3{ font-size:18px; margin-top:3px; }
+  @media(max-width:780px){ .chapters{ grid-template-columns:1fr 1fr; } }
+  @media(max-width:480px){ .chapters{ grid-template-columns:1fr; } }
+  .extras{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:30px; }
+  .tag-chip{ background:var(--navy); color:#fff; font-weight:600; font-size:14px; padding:8px 16px; border-radius:30px; }
+
+  /* meet scout */
+  .scoutsec{ background:var(--marigold-soft); }
+  .scoutsec .wrap{ display:grid; grid-template-columns:0.7fr 1.3fr; gap:30px; align-items:center; }
+  .scoutsec svg{ width:170px; }
+  @media(max-width:780px){ .scoutsec .wrap{ grid-template-columns:1fr; text-align:center; } .scoutsec .art{ display:flex; justify-content:center; } }
+
+  /* authors */
+  .auth .wrap{ max-width:760px; }
+  .auth p{ margin-bottom:14px; }
+
+  /* quote band */
+  .quote{ background:var(--navy); color:#fff; text-align:center; }
+  .quote .big{ font-family:'Caveat',cursive; font-weight:700; font-size:42px; line-height:1.2; color:#fff; }
+  .quote .by{ font-family:'Caveat',cursive; font-weight:700; font-size:22px; color:var(--marigold); margin-top:10px; }
+
+  /* final cta */
+  .final{ background:var(--marigold); text-align:center; }
+  .final h2{ font-size:34px; margin-bottom:8px; }
+  .final p{ color:#5a4a1f; margin-bottom:24px; }
+  .note{ font-size:13px; color:#7a6a3f; margin-top:14px; }
+
+  footer{ background:var(--navy); color:#cdd5de; text-align:center; padding:26px 0; font-size:14px; }
+  footer .ft{ font-family:'Caveat',cursive; font-weight:700; font-size:18px; color:#fff; }
+</style></head>
+<body>
+
+<svg width="0" height="0" style="position:absolute"><symbol id="scout" viewBox="0 0 200 244">
+  <ellipse cx="100" cy="230" rx="46" ry="8" fill="#1B2A3D" opacity="0.12"/>
+  <line x1="100" y1="40" x2="100" y2="56" stroke="#1B2A3D" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="100" cy="30" r="10" fill="#E2603B" stroke="#1B2A3D" stroke-width="3"/>
+  <ellipse cx="96" cy="26" rx="3.4" ry="2" fill="#FFFFFF" opacity="0.5"/>
+  <path d="M66 150 Q44 142 38 120" stroke="#1B2A3D" stroke-width="11" fill="none" stroke-linecap="round"/>
+  <circle cx="36" cy="114" r="10" fill="#1B2A3D"/>
+  <path d="M134 152 Q156 162 162 184" stroke="#1B2A3D" stroke-width="11" fill="none" stroke-linecap="round"/>
+  <circle cx="164" cy="188" r="10" fill="#1B2A3D"/>
+  <rect x="85" y="192" width="13" height="30" rx="6" fill="#1B2A3D"/>
+  <rect x="102" y="192" width="13" height="30" rx="6" fill="#1B2A3D"/>
+  <rect x="62" y="134" width="76" height="62" rx="22" fill="#1B2A3D"/>
+  <ellipse cx="90" cy="150" rx="30" ry="10" fill="#FFFFFF" opacity="0.11"/>
+  <circle cx="100" cy="162" r="16" fill="#F2B43E" stroke="#1B2A3D" stroke-width="3.5"/>
+  <path d="M100 148 Q104 158 114 162 Q104 166 100 176 Q96 166 86 162 Q96 158 100 148 Z" fill="#FBF1DD"/>
+  <rect x="90" y="126" width="20" height="10" fill="#1B2A3D"/>
+  <rect x="58" y="56" width="84" height="72" rx="20" fill="#1B2A3D"/>
+  <ellipse cx="92" cy="74" rx="32" ry="11" fill="#FFFFFF" opacity="0.12"/>
+  <circle cx="68" cy="68" r="2.4" fill="#FBF1DD"/><circle cx="132" cy="68" r="2.4" fill="#FBF1DD"/>
+  <rect x="70" y="70" width="60" height="44" rx="14" fill="#FBF1DD"/>
+  <ellipse cx="86" cy="80" rx="16" ry="6" fill="#FFFFFF" opacity="0.3"/>
+  <path d="M108 80 Q116 75 124 80" stroke="#1B2A3D" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <circle cx="84" cy="92" r="6" fill="#1B2A3D"/><circle cx="116" cy="92" r="6" fill="#1B2A3D"/>
+  <circle cx="81.5" cy="89.5" r="2" fill="#FBF1DD"/><circle cx="113.5" cy="89.5" r="2" fill="#FBF1DD"/>
+  <path d="M82 102 Q100 114 118 102" stroke="#1B2A3D" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+  <ellipse cx="77" cy="100" rx="6" ry="3.5" fill="#E2603B" opacity="0.4"/>
+  <ellipse cx="123" cy="100" rx="6" ry="3.5" fill="#E2603B" opacity="0.4"/>
+</symbol></svg>
+
+<nav><div class="wrap">
+  <div class="brand"><span class="r">Raise a</span> Builder</div>
+  <div class="links">
+    <a href="#idea">The idea</a>
+    <a href="#inside">Inside</a>
+    <a href="#authors">Authors</a>
+    <a href="https://hansolo42.gumroad.com/l/raiseabuilder" class="btn btn-coral" target="_blank" rel="noopener">Get the book</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="copy">
+    <div class="raise">Raise a</div>
+    <div class="builder">Builder</div>
+    <div class="uline"></div>
+    <p class="sub">A parent's guide to raising a kid who loves to make things.</p>
+    <div class="cta">
+      <a href="https://hansolo42.gumroad.com/l/raiseabuilder" class="btn btn-coral" target="_blank" rel="noopener">Get the book</a>
+      <a href="#inside" class="btn btn-ghost">Peek inside</a>
+    </div>
+  </div>
+  <div class="art"><svg viewBox="0 0 200 244"><use href="#scout"/></svg></div>
+</div></header>
+
+<section class="center">
+  <div class="wrap">
+    <h2>Your kid doesn't need another screen.</h2>
+    <p class="lead">They need to make something. The divide that really matters isn't screens vs. no screens — it's a kid who <em>watches</em> versus a kid who <em>makes</em>. This book is about quietly tilting the balance toward making, one small moment at a time.</p>
+  </div>
+</section>
+
+<section class="cream idea" id="idea">
+  <div class="wrap">
+    <div>
+      <span class="pill">The big idea</span>
+      <h2>Help them find <em>their</em> thing — not yours.</h2>
+    </div>
+    <div>
+      <p>This isn't a book about forcing your kid into a hobby. It's about setting out a buffet — cooking, building, drawing, tinkering, code — and helping them discover what they genuinely love.</p>
+      <p style="margin-top:12px;">And it's completely okay if they don't like cooking. A "no" is just one more wrong door closed on the way to the right one. You can't assign a passion — but you can open the door.</p>
+    </div>
+  </div>
+</section>
+
+<section id="inside">
+  <div class="wrap center">
+    <h2>What's inside</h2>
+    <p class="lead">Nine short chapters, each one small move a parent makes — from "my kid just watches" to "my kid makes things all the time."</p>
+    <div class="chapters" style="text-align:left;">
+      <div class="ch"><div class="n">01</div><h3>Makers vs. watchers</h3></div>
+      <div class="ch"><div class="n">02</div><h3>You don't have to be handy</h3></div>
+      <div class="ch"><div class="n">03</div><h3>A buffet, not a menu</h3></div>
+      <div class="ch"><div class="n">04</div><h3>Catching the spark</h3></div>
+      <div class="ch"><div class="n">05</div><h3>Invite, don't assign</h3></div>
+      <div class="ch"><div class="n">06</div><h3>Room to make a mess</h3></div>
+      <div class="ch"><div class="n">07</div><h3>When they want to quit</h3></div>
+      <div class="ch"><div class="n">08</div><h3>Feeding the fire</h3></div>
+      <div class="ch"><div class="n">09</div><h3>Their thing, not yours</h3></div>
+    </div>
+    <div class="extras">
+      <span class="tag-chip">A "Try this week" in every chapter</span>
+      <span class="tag-chip">Scout's recaps</span>
+      <span class="tag-chip">The Buffet: 100 things to make</span>
+      <span class="tag-chip">Your maker notebook</span>
+    </div>
+  </div>
+</section>
+
+<section class="scoutsec"><div class="wrap">
+  <div class="art"><svg viewBox="0 0 200 244"><use href="#scout"/></svg></div>
+  <div>
+    <h2>Meet Scout</h2>
+    <p class="lead">Scout is your guide on every page — a curious little maker who's into absolutely everything. Because curiosity is the only tool this whole book really runs on.</p>
+  </div>
+</div></section>
+
+<section class="auth" id="authors"><div class="wrap">
+  <h2>Written by a kid and his dad</h2>
+  <p style="margin-top:14px;"><strong>Hans Stam</strong> is the dad half of this book — and the one who came up with the whole idea. He's not a maker by trade; his only qualification is the same one this book asks of you: he opened doors and said "sure, let's try."</p>
+  <p><strong>Peter Stam</strong> is the kid half. He found his way into making through cooking — which started with a kit and never stopped — and 3D printing, which he's now, cheerfully, better at than his dad. He's living proof of nearly everything in these pages.</p>
+  <p>They wrote it together, a father and his son, which felt like exactly the right way to write a book about exactly this.</p>
+</div></section>
+
+<section class="quote"><div class="wrap">
+  <div class="big">"Don't force the kids to build.<br>Help them discover."</div>
+  <div class="by">— Hans</div>
+</div></section>
+
+<section class="final" id="get"><div class="wrap">
+  <h2>Raise a maker.</h2>
+  <p>One small move at a time.</p>
+  <a href="https://hansolo42.gumroad.com/l/raiseabuilder" class="btn btn-navy" target="_blank" rel="noopener">Get the book — €10</a>
+  <div class="note">Instant PDF download on Gumroad · 79 pages.</div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="ft">Raise a Builder</div>
+  <div style="margin-top:6px;">© 2026 Peter &amp; Hans Stam · Made (of course) by hand.</div>
+</div></footer>
+
+</body></html>
