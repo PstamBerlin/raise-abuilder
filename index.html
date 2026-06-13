@@ -4,7 +4,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Raise a Builder — a parent's guide to raising a kid who loves to make things</title>
 <meta name="description" content="A warm, un-preachy guide to raising a kid who makes things instead of just watching. By Peter & Hans Stam.">
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Fredoka:wght@400;500;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Fredoka:wght@400;500;600&family=Nunito:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;700&family=ZCOOL+KuaiLe&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
 <style>
   :root{
     --marigold:#F2B43E; --marigold-soft:#F8DDA0; --navy:#1B2A3D; --coral:#E2603B;
@@ -20,24 +21,34 @@
   p{ font-size:17px; }
   .lead{ font-size:19px; }
 
+  /* Chinese mode font swaps */
+  body.lang-zh{ font-family:'Noto Sans SC','Nunito',sans-serif; line-height:1.7; }
+  body.lang-zh h2, body.lang-zh h3, body.lang-zh .builder, body.lang-zh .bn,
+  body.lang-zh .final h2{ font-family:'ZCOOL KuaiLe',sans-serif; letter-spacing:1px; }
+  body.lang-zh .raise, body.lang-zh .r, body.lang-zh .quote .big,
+  body.lang-zh .quote .by{ font-family:'Ma Shan Zheng',cursive; }
+  body.lang-zh .btn, body.lang-zh .tag-chip, body.lang-zh .pill,
+  body.lang-zh nav .links a, body.lang-zh .ch .n{ font-family:'Noto Sans SC',sans-serif; }
+
   .btn{ display:inline-block; font-family:'Fredoka',sans-serif; font-weight:500; font-size:16px;
         padding:13px 26px; border-radius:40px; border:2px solid transparent; cursor:pointer; transition:transform .12s, background .15s; }
   .btn:hover{ transform:translateY(-2px); }
   .btn-coral{ background:var(--coral); color:#fff; }
   .btn-ghost{ background:transparent; color:var(--navy); border-color:var(--navy); }
   .btn-navy{ background:var(--navy); color:#fff; }
+  .langbtn{ font-family:'Fredoka',sans-serif; font-weight:500; font-size:14px; padding:7px 15px;
+            border-radius:30px; border:1.5px solid var(--navy); background:transparent; color:var(--navy); cursor:pointer; transition:background .15s; }
+  .langbtn:hover{ background:rgba(27,42,61,.08); }
 
-  /* nav */
   nav{ background:var(--marigold); }
   nav .wrap{ display:flex; align-items:center; justify-content:space-between; height:64px; }
   nav .brand{ font-family:'Fredoka',sans-serif; font-weight:600; font-size:19px; color:var(--navy); }
   nav .brand .r{ font-family:'Caveat',cursive; font-weight:700; font-size:22px; }
-  nav .links{ display:flex; align-items:center; gap:24px; }
-  nav .links a{ font-weight:600; font-size:15px; color:var(--navy); }
+  nav .links{ display:flex; align-items:center; gap:18px; }
+  nav .links a:not(.btn){ font-weight:600; font-size:15px; color:var(--navy); }
   nav .links .btn{ padding:9px 18px; font-size:14px; }
-  @media(max-width:680px){ nav .links a:not(.btn){ display:none; } }
+  @media(max-width:720px){ nav .links a:not(.btn){ display:none; } nav .links{ gap:12px; } }
 
-  /* hero */
   .hero{ background:var(--marigold); padding:54px 0 64px; }
   .hero .wrap{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:24px; align-items:center; }
   .hero .raise{ font-family:'Caveat',cursive; font-weight:700; font-size:46px; color:var(--navy); line-height:1; }
@@ -63,13 +74,11 @@
   .center h2{ margin-bottom:14px; }
   .center .lead{ max-width:62ch; margin:0 auto; }
 
-  /* two-up idea */
   .idea .wrap{ display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; }
   .idea .pill{ display:inline-block; background:var(--marigold-soft); color:#6b5212; font-weight:700;
                font-size:13px; padding:5px 14px; border-radius:30px; margin-bottom:14px; }
   @media(max-width:780px){ .idea .wrap{ grid-template-columns:1fr; gap:22px; } }
 
-  /* chapters grid */
   .chapters{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:34px; }
   .ch{ background:var(--paper); border:1px solid #ece4d2; border-radius:14px; padding:18px 18px 20px; }
   .ch .n{ font-family:'Fredoka',sans-serif; font-weight:600; color:var(--coral); font-size:15px; }
@@ -79,22 +88,18 @@
   .extras{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:30px; }
   .tag-chip{ background:var(--navy); color:#fff; font-weight:600; font-size:14px; padding:8px 16px; border-radius:30px; }
 
-  /* meet scout */
   .scoutsec{ background:var(--marigold-soft); }
   .scoutsec .wrap{ display:grid; grid-template-columns:0.7fr 1.3fr; gap:30px; align-items:center; }
   .scoutsec svg{ width:170px; }
   @media(max-width:780px){ .scoutsec .wrap{ grid-template-columns:1fr; text-align:center; } .scoutsec .art{ display:flex; justify-content:center; } }
 
-  /* authors */
   .auth .wrap{ max-width:760px; }
   .auth p{ margin-bottom:14px; }
 
-  /* quote band */
   .quote{ background:var(--navy); color:#fff; text-align:center; }
   .quote .big{ font-family:'Caveat',cursive; font-weight:700; font-size:42px; line-height:1.2; color:#fff; }
   .quote .by{ font-family:'Caveat',cursive; font-weight:700; font-size:22px; color:var(--marigold); margin-top:10px; }
 
-  /* final cta */
   .final{ background:var(--marigold); text-align:center; }
   .final h2{ font-size:34px; margin-bottom:8px; }
   .final p{ color:#5a4a1f; margin-bottom:24px; }
@@ -102,6 +107,57 @@
 
   footer{ background:var(--navy); color:#cdd5de; text-align:center; padding:26px 0; font-size:14px; }
   footer .ft{ font-family:'Caveat',cursive; font-weight:700; font-size:18px; color:#fff; }
+  body.lang-zh footer .ft{ font-family:'ZCOOL KuaiLe',sans-serif; }
+
+  /* ---------- animations ---------- */
+  .ch{ transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+  .ch:hover{ transform: translateY(-6px) scale(1.035); box-shadow: 0 14px 30px rgba(27,42,61,.14); border-color: var(--coral); }
+  .tag-chip{ transition: transform .16s ease, box-shadow .16s ease; }
+  .tag-chip:hover{ transform: translateY(-3px) scale(1.06); box-shadow: 0 8px 18px rgba(27,42,61,.22); }
+  .pill{ transition: transform .16s ease; }
+  .pill:hover{ transform: scale(1.07) rotate(-1.5deg); }
+  .btn:active{ transform: scale(.96); }
+  .langbtn:active{ transform: scale(.95); }
+
+  /* hero entrance (CSS-only, plays without JS) */
+  .hero .copy > *{ opacity:0; transform: translateY(16px); animation: rise .7s cubic-bezier(.2,.7,.3,1) forwards; }
+  .hero .copy .raise{ animation-delay:.05s; }
+  .hero .copy .builder{ animation-delay:.13s; }
+  .hero .copy .uline{ animation-delay:.21s; }
+  .hero .copy .sub{ animation-delay:.29s; }
+  .hero .copy .cta{ animation-delay:.37s; }
+  @keyframes rise{ to{ opacity:1; transform:none; } }
+
+  /* floating + waving Scout */
+  .hero .art svg{ animation: floaty 5s ease-in-out infinite; }
+  .scoutsec .art svg.float{ animation: floaty 4.2s ease-in-out infinite; }
+  @keyframes floaty{ 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-10px); } }
+  .wave-arm{ transform-box: fill-box; transform-origin: 100% 100%; animation: wave 2.6s ease-in-out infinite; }
+  @keyframes wave{ 0%,52%,100%{ transform: rotate(0deg); } 60%{ transform: rotate(-16deg); } 70%{ transform: rotate(5deg); } 80%{ transform: rotate(-13deg); } 90%{ transform: rotate(2deg); } }
+
+  /* scroll reveal — items cascade in one by one (guarded by html.js, no flash) */
+  .js .ch, .js .tag-chip, .js .pill, .js section .wrap h2, .js .lead,
+  .js .idea p, .js .auth p, .js .quote .big, .js .quote .by,
+  .js .scoutsec .art, .js .final p, .js .final .btn, .js .final .note{ opacity:0; }
+  .js .in{ animation: revealUp .6s cubic-bezier(.2,.7,.3,1) both; }
+  .js .shown{ opacity:1 !important; }
+  @keyframes revealUp{ from{ opacity:0; transform: translateY(24px); } to{ opacity:1; transform: translateY(0); } }
+
+  /* pulsing antenna bulb on the hero Scout */
+  .hero-scout .bulb{ transform-box: fill-box; transform-origin: center; animation: pulse 2.2s ease-in-out infinite; }
+  @keyframes pulse{ 0%,100%{ transform: scale(1); } 50%{ transform: scale(1.18); } }
+
+  /* sticky nav that gains a shadow once you scroll */
+  nav{ position: sticky; top:0; z-index:50; transition: box-shadow .25s ease; }
+  nav.nav-scrolled{ box-shadow: 0 4px 18px rgba(27,42,61,.13); }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation: none !important; transition: none !important; }
+    .hero .copy > *{ opacity:1 !important; transform:none !important; }
+    .js .ch, .js .tag-chip, .js .pill, .js section .wrap h2, .js .lead,
+    .js .idea p, .js .auth p, .js .quote .big, .js .quote .by,
+    .js .scoutsec .art, .js .final p, .js .final .btn, .js .final .note{ opacity:1 !important; }
+  }
 </style></head>
 <body>
 
@@ -135,103 +191,186 @@
 </symbol></svg>
 
 <nav><div class="wrap">
-  <div class="brand"><span class="r">Raise a</span> Builder</div>
+  <div class="brand"><span class="r" data-en="Raise a" data-zh="培养">Raise a</span> <span class="bn" data-en="Builder" data-zh="小创客">Builder</span></div>
   <div class="links">
-    <a href="#idea">The idea</a>
-    <a href="#inside">Inside</a>
-    <a href="#authors">Authors</a>
-    <a href="https://hansolo42.gumroad.com/l/raiseabuilder" class="btn btn-coral" target="_blank" rel="noopener">Get the book</a>
+    <a href="#idea" data-en="The idea" data-zh="理念">The idea</a>
+    <a href="#inside" data-en="Inside" data-zh="内容">Inside</a>
+    <a href="#authors" data-en="Authors" data-zh="作者">Authors</a>
+    <button id="langtoggle" class="langbtn" type="button">中文</button>
+    <a href="https://hansolo42.gumroad.com/l/raiseabuilder" data-href-en="https://hansolo42.gumroad.com/l/raiseabuilder" data-href-zh="https://hansolo42.gumroad.com/l/raiseabuildercn" class="btn btn-coral" target="_blank" rel="noopener" data-en="Get the book" data-zh="获取本书">Get the book</a>
   </div>
 </div></nav>
 
 <header class="hero"><div class="wrap">
   <div class="copy">
-    <div class="raise">Raise a</div>
-    <div class="builder">Builder</div>
+    <div class="raise" data-en="Raise a" data-zh="培养">Raise a</div>
+    <div class="builder" data-en="Builder" data-zh="小创客">Builder</div>
     <div class="uline"></div>
-    <p class="sub">A parent's guide to raising a kid who loves to make things.</p>
+    <p class="sub" data-en="A parent's guide to raising a kid who loves to make things." data-zh="写给父母的指南——养育一个热爱创造的孩子。">A parent's guide to raising a kid who loves to make things.</p>
     <div class="cta">
-      <a href="https://hansolo42.gumroad.com/l/raiseabuilder" class="btn btn-coral" target="_blank" rel="noopener">Get the book</a>
-      <a href="#inside" class="btn btn-ghost">Peek inside</a>
+      <a href="https://hansolo42.gumroad.com/l/raiseabuilder" data-href-en="https://hansolo42.gumroad.com/l/raiseabuilder" data-href-zh="https://hansolo42.gumroad.com/l/raiseabuildercn" class="btn btn-coral" target="_blank" rel="noopener" data-en="Get the book" data-zh="获取本书">Get the book</a>
+      <a href="#inside" class="btn btn-ghost" data-en="Peek inside" data-zh="先翻一翻">Peek inside</a>
     </div>
   </div>
-  <div class="art"><svg viewBox="0 0 200 244"><use href="#scout"/></svg></div>
+  <div class="art"><svg viewBox="0 0 200 244" class="hero-scout">
+    <ellipse cx="100" cy="230" rx="46" ry="8" fill="#1B2A3D" opacity="0.12"/>
+    <line x1="100" y1="40" x2="100" y2="56" stroke="#1B2A3D" stroke-width="4" stroke-linecap="round"/>
+    <circle class="bulb" cx="100" cy="30" r="10" fill="#E2603B" stroke="#1B2A3D" stroke-width="3"/>
+    <ellipse cx="96" cy="26" rx="3.4" ry="2" fill="#FFFFFF" opacity="0.5"/>
+    <g class="wave-arm">
+      <path d="M66 150 Q44 142 38 120" stroke="#1B2A3D" stroke-width="11" fill="none" stroke-linecap="round"/>
+      <circle cx="36" cy="114" r="10" fill="#1B2A3D"/>
+    </g>
+    <path d="M134 152 Q156 162 162 184" stroke="#1B2A3D" stroke-width="11" fill="none" stroke-linecap="round"/>
+    <circle cx="164" cy="188" r="10" fill="#1B2A3D"/>
+    <rect x="85" y="192" width="13" height="30" rx="6" fill="#1B2A3D"/>
+    <rect x="102" y="192" width="13" height="30" rx="6" fill="#1B2A3D"/>
+    <rect x="62" y="134" width="76" height="62" rx="22" fill="#1B2A3D"/>
+    <ellipse cx="90" cy="150" rx="30" ry="10" fill="#FFFFFF" opacity="0.11"/>
+    <circle cx="100" cy="162" r="16" fill="#F2B43E" stroke="#1B2A3D" stroke-width="3.5"/>
+    <path d="M100 148 Q104 158 114 162 Q104 166 100 176 Q96 166 86 162 Q96 158 100 148 Z" fill="#FBF1DD"/>
+    <rect x="90" y="126" width="20" height="10" fill="#1B2A3D"/>
+    <rect x="58" y="56" width="84" height="72" rx="20" fill="#1B2A3D"/>
+    <ellipse cx="92" cy="74" rx="32" ry="11" fill="#FFFFFF" opacity="0.12"/>
+    <circle cx="68" cy="68" r="2.4" fill="#FBF1DD"/><circle cx="132" cy="68" r="2.4" fill="#FBF1DD"/>
+    <rect x="70" y="70" width="60" height="44" rx="14" fill="#FBF1DD"/>
+    <ellipse cx="86" cy="80" rx="16" ry="6" fill="#FFFFFF" opacity="0.3"/>
+    <path d="M108 80 Q116 75 124 80" stroke="#1B2A3D" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <circle cx="84" cy="92" r="6" fill="#1B2A3D"/><circle cx="116" cy="92" r="6" fill="#1B2A3D"/>
+    <circle cx="81.5" cy="89.5" r="2" fill="#FBF1DD"/><circle cx="113.5" cy="89.5" r="2" fill="#FBF1DD"/>
+    <path d="M82 102 Q100 114 118 102" stroke="#1B2A3D" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+    <ellipse cx="77" cy="100" rx="6" ry="3.5" fill="#E2603B" opacity="0.4"/>
+    <ellipse cx="123" cy="100" rx="6" ry="3.5" fill="#E2603B" opacity="0.4"/>
+  </svg></div>
 </div></header>
 
 <section class="center">
   <div class="wrap">
-    <h2>Your kid doesn't need another screen.</h2>
-    <p class="lead">They need to make something. The divide that really matters isn't screens vs. no screens — it's a kid who <em>watches</em> versus a kid who <em>makes</em>. This book is about quietly tilting the balance toward making, one small moment at a time.</p>
+    <h2 data-en="Your kid doesn't need another screen." data-zh="你的孩子不需要又一块屏幕。">Your kid doesn't need another screen.</h2>
+    <p class="lead" data-en="They need to make something. The divide that really matters isn't screens vs. no screens — it's a kid who watches versus a kid who makes. This book is about quietly tilting the balance toward making, one small moment at a time." data-zh="他们需要去创造点什么。真正重要的分界，不是&quot;有没有屏幕&quot;，而是一个&quot;旁观&quot;的孩子，和一个&quot;创造&quot;的孩子。这本书，讲的就是怎样把天平，一次一个小瞬间地，朝&quot;创造&quot;那边轻轻倾斜。">They need to make something. The divide that really matters isn't screens vs. no screens — it's a kid who watches versus a kid who makes. This book is about quietly tilting the balance toward making, one small moment at a time.</p>
   </div>
 </section>
 
 <section class="cream idea" id="idea">
   <div class="wrap">
     <div>
-      <span class="pill">The big idea</span>
-      <h2>Help them find <em>their</em> thing — not yours.</h2>
+      <span class="pill" data-en="The big idea" data-zh="核心理念">The big idea</span>
+      <h2 data-en="Help them find their thing — not yours." data-zh="帮他们找到他们的那件事——而不是你的。">Help them find their thing — not yours.</h2>
     </div>
     <div>
-      <p>This isn't a book about forcing your kid into a hobby. It's about setting out a buffet — cooking, building, drawing, tinkering, code — and helping them discover what they genuinely love.</p>
-      <p style="margin-top:12px;">And it's completely okay if they don't like cooking. A "no" is just one more wrong door closed on the way to the right one. You can't assign a passion — but you can open the door.</p>
+      <p data-en="This isn't a book about forcing your kid into a hobby. It's about setting out a buffet — cooking, building, drawing, tinkering, code — and helping them discover what they genuinely love." data-zh="这不是一本逼孩子培养某个爱好的书。它讲的是摆出一桌&quot;自助餐&quot;——做饭、搭建、画画、捣鼓、代码——然后帮他们发现自己真正热爱的东西。">This isn't a book about forcing your kid into a hobby. It's about setting out a buffet — cooking, building, drawing, tinkering, code — and helping them discover what they genuinely love.</p>
+      <p style="margin-top:12px;" data-en="And it's completely okay if they don't like cooking. A &quot;no&quot; is just one more wrong door closed on the way to the right one. You can't assign a passion — but you can open the door." data-zh="而且，如果他们不喜欢做饭，完全没关系。一个&quot;不&quot;，只是又关上了一扇错的门，让你们离对的那扇更近一步。热爱无法被指派——但门，可以由你打开。">And it's completely okay if they don't like cooking. A "no" is just one more wrong door closed on the way to the right one. You can't assign a passion — but you can open the door.</p>
     </div>
   </div>
 </section>
 
 <section id="inside">
   <div class="wrap center">
-    <h2>What's inside</h2>
-    <p class="lead">Nine short chapters, each one small move a parent makes — from "my kid just watches" to "my kid makes things all the time."</p>
+    <h2 data-en="What's inside" data-zh="书里有什么">What's inside</h2>
+    <p class="lead" data-en="Nine short chapters, each one small move a parent makes — from &quot;my kid just watches&quot; to &quot;my kid makes things all the time.&quot;" data-zh="九个短章，每一章都是父母可以做的一个小动作——从&quot;我的孩子只会看&quot;，到&quot;我的孩子总在创造&quot;。">Nine short chapters, each one small move a parent makes — from "my kid just watches" to "my kid makes things all the time."</p>
     <div class="chapters" style="text-align:left;">
-      <div class="ch"><div class="n">01</div><h3>Makers vs. watchers</h3></div>
-      <div class="ch"><div class="n">02</div><h3>You don't have to be handy</h3></div>
-      <div class="ch"><div class="n">03</div><h3>A buffet, not a menu</h3></div>
-      <div class="ch"><div class="n">04</div><h3>Catching the spark</h3></div>
-      <div class="ch"><div class="n">05</div><h3>Invite, don't assign</h3></div>
-      <div class="ch"><div class="n">06</div><h3>Room to make a mess</h3></div>
-      <div class="ch"><div class="n">07</div><h3>When they want to quit</h3></div>
-      <div class="ch"><div class="n">08</div><h3>Feeding the fire</h3></div>
-      <div class="ch"><div class="n">09</div><h3>Their thing, not yours</h3></div>
+      <div class="ch"><div class="n">01</div><h3 data-en="Makers vs. watchers" data-zh="创造者 vs. 旁观者">Makers vs. watchers</h3></div>
+      <div class="ch"><div class="n">02</div><h3 data-en="You don't have to be handy" data-zh="你不必心灵手巧">You don't have to be handy</h3></div>
+      <div class="ch"><div class="n">03</div><h3 data-en="A buffet, not a menu" data-zh="自助餐，而非菜单">A buffet, not a menu</h3></div>
+      <div class="ch"><div class="n">04</div><h3 data-en="Catching the spark" data-zh="捕捉火花">Catching the spark</h3></div>
+      <div class="ch"><div class="n">05</div><h3 data-en="Invite, don't assign" data-zh="邀请，而非指派">Invite, don't assign</h3></div>
+      <div class="ch"><div class="n">06</div><h3 data-en="Room to make a mess" data-zh="留出弄乱的空间">Room to make a mess</h3></div>
+      <div class="ch"><div class="n">07</div><h3 data-en="When they want to quit" data-zh="当他们想放弃时">When they want to quit</h3></div>
+      <div class="ch"><div class="n">08</div><h3 data-en="Feeding the fire" data-zh="给火添柴">Feeding the fire</h3></div>
+      <div class="ch"><div class="n">09</div><h3 data-en="Their thing, not yours" data-zh="是他们的，不是你的">Their thing, not yours</h3></div>
     </div>
     <div class="extras">
-      <span class="tag-chip">A "Try this week" in every chapter</span>
-      <span class="tag-chip">Scout's recaps</span>
-      <span class="tag-chip">The Buffet: 100 things to make</span>
-      <span class="tag-chip">Your maker notebook</span>
+      <span class="tag-chip" data-en="A &quot;Try this week&quot; in every chapter" data-zh="每章都有&quot;本周试试&quot;">A "Try this week" in every chapter</span>
+      <span class="tag-chip" data-en="Scout's recaps" data-zh="小探小结">Scout's recaps</span>
+      <span class="tag-chip" data-en="The Buffet: 100 things to make" data-zh="自助餐：100 件可做的事">The Buffet: 100 things to make</span>
+      <span class="tag-chip" data-en="Your maker notebook" data-zh="你的创造笔记本">Your maker notebook</span>
     </div>
   </div>
 </section>
 
 <section class="scoutsec"><div class="wrap">
-  <div class="art"><svg viewBox="0 0 200 244"><use href="#scout"/></svg></div>
+  <div class="art"><svg viewBox="0 0 200 244" class="float"><use href="#scout"/></svg></div>
   <div>
-    <h2>Meet Scout</h2>
-    <p class="lead">Scout is your guide on every page — a curious little maker who's into absolutely everything. Because curiosity is the only tool this whole book really runs on.</p>
+    <h2 data-en="Meet Scout" data-zh="认识小探">Meet Scout</h2>
+    <p class="lead" data-en="Scout is your guide on every page — a curious little maker who's into absolutely everything. Because curiosity is the only tool this whole book really runs on." data-zh="小探是每一页上的向导——一个对所有东西都好奇的小小创造者。因为好奇心，正是这整本书真正依靠的唯一工具。">Scout is your guide on every page — a curious little maker who's into absolutely everything. Because curiosity is the only tool this whole book really runs on.</p>
   </div>
 </div></section>
 
 <section class="auth" id="authors"><div class="wrap">
-  <h2>Written by a kid and his dad</h2>
-  <p style="margin-top:14px;"><strong>Hans Stam</strong> is the dad half of this book — and the one who came up with the whole idea. He's not a maker by trade; his only qualification is the same one this book asks of you: he opened doors and said "sure, let's try."</p>
-  <p><strong>Peter Stam</strong> is the kid half. He found his way into making through cooking — which started with a kit and never stopped — and 3D printing, which he's now, cheerfully, better at than his dad. He's living proof of nearly everything in these pages.</p>
-  <p>They wrote it together, a father and his son, which felt like exactly the right way to write a book about exactly this.</p>
+  <h2 data-en="Written by a kid and his dad" data-zh="一个孩子和他的爸爸合写">Written by a kid and his dad</h2>
+  <p style="margin-top:14px;" data-en="Hans Stam is the dad half of this book — and the one who came up with the whole idea. He's not a maker by trade; his only qualification is the same one this book asks of you: he opened doors and said &quot;sure, let's try.&quot;" data-zh="汉斯·斯塔姆是这本书里当爸爸的那一半——也是想出整个点子的那个人。他不是靠手艺吃饭的创造者；他唯一的&quot;资格&quot;，正是这本书向你提出的那一个：他把门打开，说一句&quot;好啊，咱们试试&quot;。">Hans Stam is the dad half of this book — and the one who came up with the whole idea. He's not a maker by trade; his only qualification is the same one this book asks of you: he opened doors and said "sure, let's try."</p>
+  <p data-en="Peter Stam is the kid half. He found his way into making through cooking — which started with a kit and never stopped — and 3D printing, which he's now, cheerfully, better at than his dad. He's living proof of nearly everything in these pages." data-zh="彼得·斯塔姆是当孩子的那一半。他走进&quot;创造&quot;，是从做饭开始的——它始于一个套装盒子，然后再没停下——还有 3D 打印，如今他玩得已经比他爸强了。这几页里几乎所有的东西，他都是活生生的证明。">Peter Stam is the kid half. He found his way into making through cooking — which started with a kit and never stopped — and 3D printing, which he's now, cheerfully, better at than his dad. He's living proof of nearly everything in these pages.</p>
+  <p data-en="They wrote it together, a father and his son, which felt like exactly the right way to write a book about exactly this." data-zh="他们一起写了它，一个父亲和他的儿子。要写这样一本书，这感觉恰恰是最对的方式。">They wrote it together, a father and his son, which felt like exactly the right way to write a book about exactly this.</p>
 </div></section>
 
 <section class="quote"><div class="wrap">
-  <div class="big">"Don't force the kids to build.<br>Help them discover."</div>
-  <div class="by">— Hans</div>
+  <div class="big" data-en="&quot;Don't force the kids to build. Help them discover.&quot;" data-zh="&quot;别强迫孩子去创造。帮他们去发现。&quot;">"Don't force the kids to build. Help them discover."</div>
+  <div class="by" data-en="— Hans" data-zh="—— 汉斯">— Hans</div>
 </div></section>
 
 <section class="final" id="get"><div class="wrap">
-  <h2>Raise a maker.</h2>
-  <p>One small move at a time.</p>
-  <a href="https://hansolo42.gumroad.com/l/raiseabuilder" class="btn btn-navy" target="_blank" rel="noopener">Get the book — €10</a>
-  <div class="note">Instant PDF download on Gumroad · 79 pages.</div>
+  <h2 data-en="Raise a maker." data-zh="培养一个创造者。">Raise a maker.</h2>
+  <p data-en="One small move at a time." data-zh="一次，一个小动作。">One small move at a time.</p>
+  <a href="https://hansolo42.gumroad.com/l/raiseabuilder" data-href-en="https://hansolo42.gumroad.com/l/raiseabuilder" data-href-zh="https://hansolo42.gumroad.com/l/raiseabuildercn" class="btn btn-navy" target="_blank" rel="noopener" data-en="Get the book — €10" data-zh="获取本书 —— €10">Get the book — €10</a>
+  <div class="note" data-en="Instant PDF download on Gumroad · 79 pages." data-zh="Gumroad 即时 PDF 下载 · 79 页。">Instant PDF download on Gumroad · 79 pages.</div>
 </div></section>
 
 <footer><div class="wrap">
-  <div class="ft">Raise a Builder</div>
-  <div style="margin-top:6px;">© 2026 Peter &amp; Hans Stam · Made (of course) by hand.</div>
+  <div class="ft" data-en="Raise a Builder" data-zh="培养小创客">Raise a Builder</div>
+  <div style="margin-top:6px;" data-en="© 2026 Peter &amp; Hans Stam · Made (of course) by hand." data-zh="© 2026 彼得 &amp; 汉斯·斯塔姆 ·（当然是）手工打造。">© 2026 Peter &amp; Hans Stam · Made (of course) by hand.</div>
 </div></footer>
+
+<script>
+  function setLang(lang){
+    document.documentElement.lang = (lang === 'zh' ? 'zh' : 'en');
+    document.body.classList.toggle('lang-zh', lang === 'zh');
+    document.querySelectorAll('[data-en]').forEach(function(el){
+      var v = el.getAttribute('data-' + lang);
+      if(v !== null) el.textContent = v;
+    });
+    document.querySelectorAll('[data-href-en]').forEach(function(el){
+      var h = el.getAttribute('data-href-' + lang);
+      if(h) el.setAttribute('href', h);
+    });
+    var btn = document.getElementById('langtoggle');
+    if(btn) btn.textContent = (lang === 'zh' ? 'EN' : '中文');
+    try{ localStorage.setItem('rab_lang', lang); }catch(e){}
+  }
+  (function(){
+    var saved = 'en';
+    try{ saved = localStorage.getItem('rab_lang') || 'en'; }catch(e){}
+    setLang(saved);
+    document.getElementById('langtoggle').addEventListener('click', function(){
+      setLang(document.body.classList.contains('lang-zh') ? 'en' : 'zh');
+    });
+  })();
+
+  /* reveal items one by one as they scroll in; cards & chips cascade */
+  (function(){
+    var SEL = '.ch, .tag-chip, .pill, section .wrap h2, .lead, .idea p, .auth p, .quote .big, .quote .by, .scoutsec .art, .final p, .final .btn, .final .note';
+    var els = document.querySelectorAll(SEL);
+    document.querySelectorAll('.chapters .ch').forEach(function(el,i){ el.style.animationDelay = (i*0.07)+'s'; });
+    document.querySelectorAll('.extras .tag-chip').forEach(function(el,i){ el.style.animationDelay = (i*0.06)+'s'; });
+    function show(el){
+      el.classList.add('in');
+      el.addEventListener('animationend', function(){
+        el.classList.remove('in'); el.classList.add('shown'); el.style.animationDelay = '';
+      }, { once:true });
+    }
+    if(!('IntersectionObserver' in window)){ els.forEach(function(el){ el.classList.add('shown'); }); return; }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ show(e.target); io.unobserve(e.target); } });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    els.forEach(function(el){ io.observe(el); });
+  })();
+
+  /* nav gains a shadow once you scroll */
+  (function(){
+    var nav = document.querySelector('nav');
+    function onScroll(){ nav.classList.toggle('nav-scrolled', window.scrollY > 8); }
+    window.addEventListener('scroll', onScroll, { passive:true });
+    onScroll();
+  })();
+</script>
 
 </body></html>
