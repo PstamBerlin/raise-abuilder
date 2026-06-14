@@ -109,6 +109,43 @@
   footer .ft{ font-family:'Caveat',cursive; font-weight:700; font-size:18px; color:#fff; }
   body.lang-zh footer .ft{ font-family:'ZCOOL KuaiLe',sans-serif; }
 
+  /* peek inside */
+  .peek .wrap{ max-width:720px; }
+  .sample-page{ background:var(--cream); border:1px solid #ece4d2; border-radius:16px; padding:26px 28px; margin-top:26px; box-shadow:0 12px 30px rgba(27,42,61,.07); }
+  .sample-page .se{ font-family:'Fredoka',sans-serif; font-weight:500; color:#B23E1E; font-size:14px; margin-bottom:8px; }
+  .sample-page > p{ color:#33414E; font-size:16.5px; line-height:1.7; }
+  .sample-box{ border-radius:12px; padding:14px 18px 16px; margin-top:18px; }
+  .sample-box .bh{ display:flex; align-items:center; gap:9px; font-family:'Fredoka',sans-serif; font-weight:500; color:var(--navy); font-size:17px; margin-bottom:8px; }
+  .sample-box .badge{ width:22px; height:22px; border-radius:50%; background:var(--coral); color:#FBF1DD; font-weight:700; display:inline-flex; align-items:center; justify-content:center; font-size:14px; }
+  .sample-box.try{ background:#FCEEC9; border:1px solid #E3B23C; }
+  .sample-box.try p{ margin:0; font-size:15px; line-height:1.6; color:#4A4636; }
+  .sample-box.recap{ background:#FBF1DD; border:1.5px solid var(--navy); }
+  .sample-box.recap ul{ list-style:none; margin:0; padding:0; }
+  .sample-box.recap li{ position:relative; padding-left:18px; font-size:15px; line-height:1.55; color:#38414E; margin:0 0 7px; }
+  .sample-box.recap li:last-child{ margin:0; }
+  .sample-box.recap li::before{ content:""; position:absolute; left:0; top:9px; width:6px; height:6px; border-radius:50%; background:var(--coral); }
+  .sample-box.recap .mini{ width:30px; height:37px; flex:0 0 auto; }
+  .peek .more{ text-align:center; margin-top:22px; color:#5a4a1f; font-weight:700; }
+
+  /* FAQ */
+  .faq .wrap{ max-width:760px; }
+  .faq details{ border:1px solid #ece4d2; border-radius:12px; padding:2px 18px; margin-bottom:12px; background:var(--paper); transition: box-shadow .18s ease; }
+  .faq details[open]{ box-shadow:0 8px 22px rgba(27,42,61,.08); }
+  .faq summary{ list-style:none; cursor:pointer; font-family:'Fredoka',sans-serif; font-weight:500; color:var(--navy); font-size:17px; padding:15px 0; display:flex; justify-content:space-between; align-items:center; gap:14px; }
+  .faq summary::-webkit-details-marker{ display:none; }
+  .faq summary::after{ content:"+"; color:var(--coral); font-weight:700; font-size:24px; line-height:1; transition: transform .2s ease; }
+  .faq details[open] summary::after{ transform: rotate(45deg); }
+  .faq details p{ margin:0 0 16px; color:var(--ink); font-size:16px; line-height:1.65; }
+  body.lang-zh .se, body.lang-zh .sample-box .bh, body.lang-zh .faq summary{ font-family:'ZCOOL KuaiLe',sans-serif; }
+
+  /* "As featured in" strip */
+  .featured-strip{ background:var(--cream); padding:34px 0; }
+  .featured-strip .wrap{ display:flex; align-items:center; justify-content:center; gap:16px; flex-wrap:wrap; }
+  .featured-strip .fl{ font-family:'Fredoka',sans-serif; font-weight:500; letter-spacing:2px; text-transform:uppercase; font-size:13px; color:#8a7a4f; }
+  .make-badge{ font-family:'Fredoka',sans-serif; font-weight:700; font-size:26px; color:#fff; background:var(--navy); padding:5px 16px; border-radius:9px; transition:transform .15s ease; }
+  .make-badge:hover{ transform:translateY(-2px); }
+  body.lang-zh .featured-strip .fl, body.lang-zh .make-badge{ font-family:'ZCOOL KuaiLe',sans-serif; }
+
   /* ---------- animations ---------- */
   .ch{ transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
   .ch:hover{ transform: translateY(-6px) scale(1.035); box-shadow: 0 14px 30px rgba(27,42,61,.14); border-color: var(--coral); }
@@ -138,7 +175,7 @@
   /* scroll reveal — items cascade in one by one (guarded by html.js, no flash) */
   .js .ch, .js .tag-chip, .js .pill, .js section .wrap h2, .js .lead,
   .js .idea p, .js .auth p, .js .quote .big, .js .quote .by,
-  .js .scoutsec .art, .js .final p, .js .final .btn, .js .final .note{ opacity:0; }
+  .js .scoutsec .art, .js .sample-page, .js .faq details, .js .final p, .js .final .btn, .js .final .note{ opacity:0; }
   .js .in{ animation: revealUp .6s cubic-bezier(.2,.7,.3,1) both; }
   .js .shown{ opacity:1 !important; }
   @keyframes revealUp{ from{ opacity:0; transform: translateY(24px); } to{ opacity:1; transform: translateY(0); } }
@@ -156,7 +193,7 @@
     .hero .copy > *{ opacity:1 !important; transform:none !important; }
     .js .ch, .js .tag-chip, .js .pill, .js section .wrap h2, .js .lead,
     .js .idea p, .js .auth p, .js .quote .big, .js .quote .by,
-    .js .scoutsec .art, .js .final p, .js .final .btn, .js .final .note{ opacity:1 !important; }
+    .js .scoutsec .art, .js .sample-page, .js .faq details, .js .final p, .js .final .btn, .js .final .note{ opacity:1 !important; }
   }
 </style></head>
 <body>
@@ -244,6 +281,12 @@
   </svg></div>
 </div></header>
 
+<!-- TODO: replace href="#" with the Make: article URL when Peter sends it -->
+<section class="featured-strip"><div class="wrap">
+  <span class="fl" data-en="As featured in" data-zh="媒体报道">As featured in</span>
+  <a class="make-badge" href="#" target="_blank" rel="noopener" aria-label="Make:">Make:</a>
+</div></section>
+
 <section class="center">
   <div class="wrap">
     <h2 data-en="Your kid doesn't need another screen." data-zh="你的孩子不需要又一块屏幕。">Your kid doesn't need another screen.</h2>
@@ -288,6 +331,27 @@
   </div>
 </section>
 
+<section class="peek cream"><div class="wrap center">
+  <h2 data-en="Peek inside" data-zh="抢先看">Peek inside</h2>
+  <p class="lead" data-en="A taste of page one — the opening, plus the two things every chapter ends with." data-zh="尝一口第 1 页——开篇，加上每一章结尾的那两样东西。">A taste of page one — the opening, plus the two things every chapter ends with.</p>
+  <div class="sample-page" style="text-align:left;">
+    <div class="se" data-en="From the introduction" data-zh="选自引言">From the introduction</div>
+    <p data-en="Picture your kid right now. There's a good chance they're holding a screen — watching someone else build, bake, or play. And a quiet voice in the back of your mind says: this can't be all there is. You're right. It isn't." data-zh="现在，想象一下你的孩子。很可能，他们正盯着一块屏幕——看着别人搭建、烘焙、或玩耍。而你心底有个轻轻的声音在说：这不该是全部吧。你是对的。这确实不是。">Picture your kid right now. There's a good chance they're holding a screen — watching someone else build, bake, or play. And a quiet voice in the back of your mind says: this can't be all there is. You're right. It isn't.</p>
+    <div class="sample-box try">
+      <div class="bh"><span class="badge">+</span> <span data-en="Try this week" data-zh="本周试试">Try this week</span></div>
+      <p data-en="For one week, just notice — when does your kid make something vs. consume something? Don't change anything yet. Just see the ratio." data-zh="接下来一周，只是观察——孩子什么时候在创造，什么时候在消费？先什么都别改，只看一看这个比例。">For one week, just notice — when does your kid make something vs. consume something? Don't change anything yet. Just see the ratio.</p>
+    </div>
+    <div class="sample-box recap">
+      <div class="bh"><svg class="mini" viewBox="0 0 200 244"><use href="#scout"/></svg> <span data-en="Scout's recap" data-zh="小探小结">Scout's recap</span></div>
+      <ul>
+        <li data-en="Making vs. consuming is the real divide — not screens vs. no screens." data-zh="真正的分界是创造 vs. 消费——而不是有没有屏幕。">Making vs. consuming is the real divide — not screens vs. no screens.</li>
+        <li data-en="You're not banning anything — just tilting the balance toward making." data-zh="你不是要禁止什么——只是把天平朝创造那边轻轻倾斜。">You're not banning anything — just tilting the balance toward making.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="more" data-en="That's page one. There are 78 more." data-zh="这只是第 1 页，后面还有 78 页。">That's page one. There are 78 more.</p>
+</div></section>
+
 <section class="scoutsec"><div class="wrap">
   <div class="art"><svg viewBox="0 0 200 244" class="float"><use href="#scout"/></svg></div>
   <div>
@@ -306,6 +370,30 @@
 <section class="quote"><div class="wrap">
   <div class="big" data-en="&quot;Don't force kids to build. Help them discover.&quot;" data-zh="&quot;别强迫孩子去创造。帮他们去发现。&quot;">"Don't force kids to build. Help them discover."</div>
   <div class="by" data-en="— Hans" data-zh="—— 汉斯">— Hans</div>
+</div></section>
+
+<section class="faq"><div class="wrap">
+  <h2 class="center" style="margin-bottom:28px;" data-en="Questions" data-zh="常见问题">Questions</h2>
+  <details>
+    <summary><span data-en="Do I need to be techy or good with my hands?" data-zh="我需要懂技术、或者心灵手巧吗？">Do I need to be techy or good with my hands?</span></summary>
+    <p data-en="Not at all. This book is for non-handy parents — your job is to open doors and stay curious, not to be an expert." data-zh="完全不需要。这本书就是写给那些不擅长动手的父母的——你的任务是开门、保持好奇，而不是当专家。">Not at all. This book is for non-handy parents — your job is to open doors and stay curious, not to be an expert.</p>
+  </details>
+  <details>
+    <summary><span data-en="What age is it for?" data-zh="它适合多大的孩子？">What age is it for?</span></summary>
+    <p data-en="It's about a mindset, so it works across childhood — most useful for roughly ages 5–13, and the ideas stretch up and down from there." data-zh="它讲的是一种心态，所以贯穿整个童年都适用——大致 5 到 13 岁最受用，这些理念向上、向下都能延伸。">It's about a mindset, so it works across childhood — most useful for roughly ages 5–13, and the ideas stretch up and down from there.</p>
+  </details>
+  <details>
+    <summary><span data-en="Print or digital?" data-zh="纸质书还是电子书？">Print or digital?</span></summary>
+    <p data-en="Right now it's an instant PDF (79 pages) you can read on any device. A print paperback is in the works." data-zh="目前是即时下载的 PDF（79 页），任何设备都能看。纸质平装本正在筹备中。">Right now it's an instant PDF (79 pages) you can read on any device. A print paperback is in the works.</p>
+  </details>
+  <details>
+    <summary><span data-en="Is the Chinese edition the same book?" data-zh="中文版是同一本书吗？">Is the Chinese edition the same book?</span></summary>
+    <p data-en="Yes — fully translated, plus an extra section written just for Chinese parents about exams, &quot;standard answers,&quot; and creativity." data-zh="是的——完整翻译，还额外加了一节专为中国父母写的内容，聊聊应试、标准答案与创造力。">Yes — fully translated, plus an extra section written just for Chinese parents about exams, "standard answers," and creativity.</p>
+  </details>
+  <details>
+    <summary><span data-en="Who wrote it?" data-zh="是谁写的？">Who wrote it?</span></summary>
+    <p data-en="An eleven-year-old, Peter, and his dad, Hans — together. It's living proof of the whole idea." data-zh="一个十一岁的孩子彼得，和他的爸爸汉斯——一起写的。这本身就是整个理念活生生的证明。">An eleven-year-old, Peter, and his dad, Hans — together. It's living proof of the whole idea.</p>
+  </details>
 </div></section>
 
 <section class="final" id="get"><div class="wrap">
@@ -347,10 +435,11 @@
 
   /* reveal items one by one as they scroll in; cards & chips cascade */
   (function(){
-    var SEL = '.ch, .tag-chip, .pill, section .wrap h2, .lead, .idea p, .auth p, .quote .big, .quote .by, .scoutsec .art, .final p, .final .btn, .final .note';
+    var SEL = '.ch, .tag-chip, .pill, section .wrap h2, .lead, .idea p, .auth p, .quote .big, .quote .by, .scoutsec .art, .sample-page, .faq details, .final p, .final .btn, .final .note';
     var els = document.querySelectorAll(SEL);
     document.querySelectorAll('.chapters .ch').forEach(function(el,i){ el.style.animationDelay = (i*0.07)+'s'; });
     document.querySelectorAll('.extras .tag-chip').forEach(function(el,i){ el.style.animationDelay = (i*0.06)+'s'; });
+    document.querySelectorAll('.faq details').forEach(function(el,i){ el.style.animationDelay = (i*0.06)+'s'; });
     function show(el){
       el.classList.add('in');
       el.addEventListener('animationend', function(){
